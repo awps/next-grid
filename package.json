@@ -1,6 +1,6 @@
 {
-  "name": "next-grid",
-  "version": "0.1.0",
+  "name": "scss-next-grid",
+  "version": "0.1.1",
   "description": "",
   "main": "index.scss",
   "scripts": {
