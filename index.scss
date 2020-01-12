@@ -1,0 +1,19 @@
+@import "functions";
+
+@mixin grid($columns) {
+    display: grid;
+
+    @if (_next-grid-is-number($columns)) {
+        grid-template-columns: _next-grid-repeater($columns, auto);
+    } @else {
+        grid-template-columns: #{$columns};
+    }
+}
+
+@mixin gap($gap: 30px) {
+    grid-column-gap: #{$gap}
+}
+
+@mixin gap-v($gap: 30px) {
+    grid-row-gap: #{$gap}
+}
