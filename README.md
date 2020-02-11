@@ -1,4 +1,4 @@
-### SCSS NEWXT GRID
+### SCSS NEXT GRID
 
 SCSS Grid Helpers -- based on `display:grid`
 
