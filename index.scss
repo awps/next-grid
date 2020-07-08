@@ -1,4 +1,12 @@
-@import "functions";
+@function _grid-repeater($n, $character) {
+    $c: "";
+
+    @for $i from 1 through $n {
+        $c: $c +" "+ $character;
+    }
+
+    @return unquote($c);
+}
 
 @mixin gap($gap: 30px) {
     grid-column-gap: #{$gap}
@@ -11,11 +19,9 @@
 @mixin grid($columns) {
     display: grid;
 
-    @if (_next-grid-is-number($columns)) {
-        grid-template-columns: _next-grid-repeater($columns, 1fr);
+    @if (type-of($columns) == 'number') {
+        grid-template-columns: _grid-repeater($columns, 1fr);
     } @else {
         grid-template-columns: #{$columns};
     }
-
-    @include gap();
 }
